@@ -1,8 +1,8 @@
 (function () {
 
-  var input,
-      submit,
-      message,
+  var input = document.querySelector('#iris-input'),
+      submit = document.querySelector('#iris-input'),
+      message = document.querySelector('#iris-input'),
       validInputs = [
         "Where do you live?",
         "What are you?",
@@ -16,7 +16,11 @@
         "42. Duh.",
         "What do you call a swindler going down some stairs? <br>Condescending. Ha!"];
 
+
+        console.log(input);
   // Add event listeners to text input and submit button below
+  submit.addEventListener('click', processInput);
+  input.addEventListener('keypress',checkKey);
 
 
   // This function checks if the user has pressed "ENTER" on their keyboard.
@@ -41,5 +45,12 @@
    *  validInputs array), the response would be "42. Duh" (index 3 in the
    *  responses array).
    */
+
+function processInput() {
+  let currentInput = input.value;
+  input.value = '';
+  alert(currentInput);
+}
+
 
 })();
