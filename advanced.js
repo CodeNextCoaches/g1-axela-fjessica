@@ -1,9 +1,9 @@
 (function () {
 
-  var input,
-      submit,
-      message,
-      advancedDiv,
+  var input = document.querySelector("#axela-input"),
+      submit = document.querySelector("#axela-submit"),
+      message = document.querySelector("#axela-message"),
+      advancedDiv = document.querySelector("#axela-advanced"),
       errorText = "I don't understand you.",
       dunnoText = "I wasn't programmed to know that.",
       picture = null,
@@ -47,7 +47,23 @@
       anything other than 1 or 2 words. This will simply set the innerHTML of
       the message element to errorText.
    */
+   function processInput() {
+     if (advancedDiv.contains(picture)) {
+       picture.removeChild();
+     }
+     var words = input.value.toLowerCase().trim().split(" ");
+     input.value = ' ';
 
+     if (words.length ==1){
+       if(greeting.idexOf(words[0]) > -1) {
+         message.innerHTML = 'Greetings!';
+       } else {
+         message.innerHTML = errorText;
+       }
+     }
+
+
+   }
   /*
    * who(word)
    * This function sets the innerHTML of the message element to specific text,
