@@ -56,12 +56,33 @@
 
      if (words.length ==1){
        if(greeting.idexOf(words[0]) > -1) {
-         message.innerHTML = 'Greetings!';
+         message.innerHTML = 'Hi!';
        } else {
          message.innerHTML = errorText;
        }
-     }
+     } else if (word.length == 2) {
+       switch (words[0]) {
+         case ("who"):
+           who(words[1]);
+           break;
+         case ("what"):
+           what(words[1]);
+           break;
+         case ("where"):
+           where(words[1]);
+           break;
+         case ("tell"):
+           tell(words[1]);
+           break;
+         case ("show"):
+             show(words[1]);
+             break;
+         default:
+          message.innerHTML = errorText;
 
+       }
+     } else {
+       message.innerHTML = errorText;
 
    }
   /*
@@ -79,6 +100,70 @@
      doesn't know what they're referring to.)
    */
 
+
+function who(word) {
+  switch (word) {
+    case 'you':
+      message.innerHTML = "I am Axela, of course";
+      break;
+    case 'me' :
+    message.innerHTML = "Someone lame since I don't know you";
+      break;
+    case 'dabest':
+    message.innerHTML = "According to my research, it's me";
+      break;
+    default:
+      message.innerHTML = dunnoText;
+  }
+}
+
+function what(word) {
+  switch (word) {
+    case 'areyou':
+      message.innerHTML = "I am not sure, it wasn't coded";
+      break;
+    case 'me' :
+    message.innerHTML = "Someone doing great at annoying me with questions";
+      break;
+    case 'youdoing':
+    message.innerHTML = "If it wasn't obvious enough, answering your questions";
+      break;
+    default:
+      message.innerHTML = dunnoText;
+  }
+}
+
+function where(word) {
+  switch (word) {
+    case 'youlive':
+      message.innerHTML = "I don't live";
+      break;
+    case 'amI' :
+    message.innerHTML = "In my business. You can leave now";
+      break;
+    case 'togo':
+    message.innerHTML = "Anywhere but here please";
+      break;
+    default:
+      message.innerHTML = dunnoText;
+  }
+}
+
+function tell(word) {
+  switch (word) {
+    case 'joke':
+      message.innerHTML = "Your life. Sorry it's lame - meant your life not the joke";
+      break;
+    case 'story' :
+    message.innerHTML = "Oh I know a horror one! Once, an engineer was working day and night on a girl called Iris. She was about to be done and explore the internet but her code wasn't saved! The enginner turned off thier laptop, accidently killing the girl..";
+      break;
+    case 'news':
+    message.innerHTML = "What do I tell them?";
+      break;
+    default:
+      message.innerHTML = dunnoText;
+  }
+}
   /*
    * what(word)
    * See above.
