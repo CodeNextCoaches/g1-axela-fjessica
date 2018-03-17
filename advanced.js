@@ -3,7 +3,7 @@
   var input = document.querySelector("#axela-input"),
       submit = document.querySelector("#axela-submit"),
       message = document.querySelector("#axela-message"),
-      advancedDiv = document.querySelector("#axela-advanced"),
+      advancedDiv = document.querySelector("#advanced"),
       errorText = "I don't understand you.",
       dunnoText = "I wasn't programmed to know that.",
       picture = null,
@@ -52,15 +52,15 @@
        picture.removeChild();
      }
      var words = input.value.toLowerCase().trim().split(" ");
-     input.value = ' ';
+     input.value = '';
 
      if (words.length ==1){
        if(greeting.idexOf(words[0]) > -1) {
-         message.innerHTML = 'Hi!';
+         message.innerHTML = 'Greatings!';
        } else {
          message.innerHTML = errorText;
        }
-     } else if (word.length == 2) {
+     } else if (words.length == 2) {
        switch (words[0]) {
          case ("who"):
            who(words[1]);
@@ -126,7 +126,7 @@ function what(word) {
     message.innerHTML = "Someone doing great at annoying me with questions";
       break;
     case 'youdoing':
-    message.innerHTML = "If it wasn't obvious enough, answering your questions";
+    message.innerHTML = "If it isn't obvious enough, answering your questions";
       break;
     default:
       message.innerHTML = dunnoText;
@@ -162,27 +162,23 @@ function tell(word) {
       break;
     default:
       message.innerHTML = dunnoText;
+    }
+}
+function show(word) {
+  switch (word) {
+    case 'dog':
+      message.innerHTML = "Here is a dog";
+      picture = document.createElement('img');
+      picture.src = 'img/dog.png';
+      advancedDiv.appendChild(picture);
+      break;
+
+      case '':
+      message.innerHTML = "";
+      picture = document.createElement('');
+
   }
 }
-  /*
-   * what(word)
-   * See above.
-   */
-
-  /*
-   * where(word)
-   * See above.
-   */
-
-  /*
-   * tell(word)
-   * See above.
-   */
-
-  /*
-   * show(word)
-   * See above.
-   */
-
+}
 
 })();
