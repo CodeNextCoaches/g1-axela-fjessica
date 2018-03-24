@@ -9,4 +9,8 @@ body div {
   border: 1px solid black;
   margin: 0 auto;
   padding: 10px;
+  background-image: url("img/alexa2.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  clip: rect(0px,60px,200px,0px);
 }
